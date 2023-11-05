@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const CartPage = () => {
-  const { email, token } = useAuthStore();
+  const { email, idToken: token } = useAuthStore();
   const { cart, setCart } = useCartStore();
   const [checkedItems, setCheckedItems] = useState([]);
 

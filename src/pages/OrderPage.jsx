@@ -31,7 +31,7 @@ import { useAuthStore } from "../store/authStore";
 import Swal from "sweetalert2";
 
 const OrderPage = () => {
-  const { email, token } = useAuthStore();
+  const { email, idToken: token } = useAuthStore();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = useRef(null);
   const [rating, setRating] = useState("");

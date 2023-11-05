@@ -12,7 +12,6 @@ import CartPage from "./pages/CartPage";
 import ProductPage from "./pages/ProductPage";
 import LoginPage from "./pages/LoginPage";
 import BrowseProductsPage from "./pages/BrowseProductsPage";
-import RegisterPage from "./pages/RegisterPage";
 import PaymentPage from "./pages/PaymentPage";
 import HomePage from "./pages/HomePage";
 
@@ -37,7 +36,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="/products" element={<BrowseProductsPage />} exact />
             <Route path="/product/:id" element={<ProductPage />} exact />
             <Route path="/login" element={<LoginPage />} exact />
-            <Route path="/register" element={<RegisterPage />} exact />
             <Route path="/payment" element={<PaymentPage />} exact />
           </Routes>
         </Layout>

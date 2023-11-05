@@ -20,7 +20,7 @@ import Swal from "sweetalert2";
 
 const ProductPage = () => {
   const { id } = useParams();
-  const { email, token } = useAuthStore();
+  const { email, idToken: token } = useAuthStore();
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();

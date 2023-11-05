@@ -22,7 +22,7 @@ import { useAuthStore } from "../store/authStore";
 
 const BrowseProductsPage = () => {
   const [products, setProducts] = useState([]);
-  const { accessToken: token } = useAuthStore();
+  const { idToken: token } = useAuthStore();
   const navigate = useNavigate();
 
   const fetchProductList = () => {

@@ -30,7 +30,7 @@ const PaymentPage = () => {
     month: "",
   });
   const { cart } = useCartStore();
-  const { email, token } = useAuthStore();
+  const { email, idToken: token } = useAuthStore();
   const navigate = useNavigate();
 
   // useEffect(() => {
@@ -112,7 +112,8 @@ const PaymentPage = () => {
         mt="24"
         p="25"
         direction="column"
-        alignSelf={"start"}>
+        alignSelf={"start"}
+      >
         <Box>
           <Heading>Review</Heading>
           {cart &&
@@ -124,12 +125,14 @@ const PaymentPage = () => {
                     border="1px"
                     borderColor="#d7d7d7"
                     borderRadius="12px"
-                    mr="5">
+                    mr="5"
+                  >
                     <Image
                       src={item.image_url}
                       height="50px"
                       width="50px"
-                      objectFit="contain"></Image>
+                      objectFit="contain"
+                    ></Image>
                   </Box>
                   <HStack spacing="16" w="100%">
                     <Box>
