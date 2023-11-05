@@ -88,25 +88,25 @@ const ProductPage = () => {
   // Review
   const [review, setReview] = useState([]);
 
-  const fetchReviewDetails = () => {
-    axios
-      .get(`${import.meta.env.VITE_REVIEW_ENDPOINT}/get/product/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => {
-        // console.log(res.data.data);
-        setReview(res.data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  // const fetchReviewDetails = () => {
+  //   axios
+  //     .get(`${import.meta.env.VITE_REVIEW_ENDPOINT}/get/product/${id}`, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     })
+  //     .then((res) => {
+  //       // console.log(res.data.data);
+  //       setReview(res.data.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
-  useEffect(() => {
-    fetchReviewDetails();
-  }, []);
+  // useEffect(() => {
+  //   fetchReviewDetails();
+  // }, []);
 
   return (
     <Flex w="100%">

@@ -25,21 +25,21 @@ const theme = extendTheme({
   },
 });
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<HomePage />} exact />
-            <Route path="/cart" element={<CartPage />} exact />
-            <Route path="/orders" element={<OrderPage />} exact />
-            <Route path="/products" element={<BrowseProductsPage />} exact />
-            <Route path="/product/:id" element={<ProductPage />} exact />
-            <Route path="/login" element={<LoginPage />} exact />
-            <Route path="/payment" element={<PaymentPage />} exact />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
-    </ChakraProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <ChakraProvider theme={theme}>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} exact />
+          <Route path="/cart" element={<CartPage />} exact />
+          <Route path="/orders" element={<OrderPage />} exact />
+          <Route path="/products" element={<BrowseProductsPage />} exact />
+          <Route path="/product/:id" element={<ProductPage />} exact />
+          <Route path="/login" element={<LoginPage />} exact />
+          <Route path="/payment" element={<PaymentPage />} exact />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  </ChakraProvider>
+  // </React.StrictMode>
 );

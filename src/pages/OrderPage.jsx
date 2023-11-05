@@ -84,41 +84,48 @@ const OrderPage = () => {
       });
       return;
     }
+    handleClose();
+    Swal.fire({
+      icon: "success",
+      title: "Success!",
+      text: `Your review for ${modalProductName} has been submitted!`,
+      confirmButtonColor: "#262626",
+    });
 
-    let payload = {
-      product_id: modalProductId,
-      order_id: modalOrderId,
-      user_id: email,
-      review_description: review,
-      review_stars: rating,
-    };
-    axios
-      .post(`${import.meta.env.VITE_MAKEREVIEW_ENDPOINT}`, payload, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => {
-        // console.log(res.data);
-        handleClose();
-        Swal.fire({
-          icon: "success",
-          title: "Success!",
-          text: `Your review for ${modalProductName} has been submitted!`,
-          confirmButtonColor: "#262626",
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-        handleClose();
-        Swal.fire({
-          icon: "error",
-          title: "Oopss!",
-          text: `You have already reviewed ${modalProductName}!`,
-          confirmButtonColor: "#262626",
-        });
-        return;
-      });
+    // let payload = {
+    //   product_id: modalProductId,
+    //   order_id: modalOrderId,
+    //   user_id: email,
+    //   review_description: review,
+    //   review_stars: rating,
+    // };
+    // axios
+    //   .post(`${import.meta.env.VITE_MAKEREVIEW_ENDPOINT}`, payload, {
+    //     headers: {
+    //       Authorization: `Bearer ${token}`,
+    //     },
+    //   })
+    //   .then((res) => {
+    //     // console.log(res.data);
+    //     handleClose();
+    //     Swal.fire({
+    //       icon: "success",
+    //       title: "Success!",
+    //       text: `Your review for ${modalProductName} has been submitted!`,
+    //       confirmButtonColor: "#262626",
+    //     });
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     handleClose();
+    //     Swal.fire({
+    //       icon: "error",
+    //       title: "Oopss!",
+    //       text: `You have already reviewed ${modalProductName}!`,
+    //       confirmButtonColor: "#262626",
+    //     });
+    //     return;
+    //   });
   };
 
   // For Forms

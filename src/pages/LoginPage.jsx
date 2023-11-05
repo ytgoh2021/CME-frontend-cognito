@@ -84,15 +84,9 @@ const LoginPage = () => {
   };
 
   useEffect(() => {
-    if (!code || token) return;
+    if (!code) return;
     handleAuth(code);
-  }, [code, token]);
-
-  useEffect(() => {
-    if (token !== null) {
-      navigate("/");
-    }
-  }, []);
+  }, [code]);
 
   return (
     <Box h="calc(100vh - 100px)" p="24">
